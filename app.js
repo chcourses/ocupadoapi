@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const errorMiddleeware = require('./middleware/exceptions');
 const userRoutes = require('./routes/api/userRoutes');
+const concRoutes = require('./routes/api/concRoutes');
 
 // EXPRESS
 const app = new express();
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // ROUTES
 app.use('/api/users', userRoutes);
+app.use('/api/concessionarias', concRoutes);
 
 // ERROR MIDDLEWARE
 app.use(errorMiddleeware);

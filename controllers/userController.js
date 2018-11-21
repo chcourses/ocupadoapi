@@ -30,7 +30,7 @@ exports.create = (req, res, next) => {
     .catch(err => next(err));
 };
 
-// (R) Read user
+// (R) Read users
 exports.getAll = (req, res, next) => {
   User.find()
     .select('_id name email')
@@ -110,7 +110,6 @@ exports.updatePasswordOrName = (req, res, next) => {
 };
 
 // (D) Delete user
-
 module.exports.deleteById = (req, res, next) => {
   const { id } = req.params;
   User.findById(id)

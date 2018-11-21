@@ -5,7 +5,7 @@ const userController = require('../../controllers/userController');
 router
   .get('/', userController.getAll)
   .post('/new', userController.create)
-  .patch('/update', userController.updatePasswordOrName)
-  .delete('/delete/:id', userController.deleteById);
+  .patch('/update', userController.updatePasswordOrName) // VERIFICAR!(SEM ID? TOKEN?)
+  .delete('/:id/deçete', userController.deleteById);
 
 module.exports = router;
